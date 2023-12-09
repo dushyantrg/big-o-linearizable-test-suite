@@ -9,8 +9,6 @@ echo "Starting systemd"
 # and https://serverfault.com/a/915878
 export container=docker
 
-java -version
-java -jar /usr/bin/bigo-raft.jar
 
 #exec strace -s 200 -o /tmp/foo -f /bin/systemd --system --default-standard-output=tty --default-standard-error=tty --log-target=console --log-level=debug 100>&1 1>&-
 exec /bin/systemd --system 100>&1 1>&-

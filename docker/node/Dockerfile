@@ -48,7 +48,7 @@ RUN groupadd jecci &&\
 #install jre 20
 RUN sudo apt install software-properties-common -y
 RUN sudo apt update
-RUN wget -O- https://apt.corretto.aws/corretto.key | sudo apt-key add - 
+RUN wget -O- https://apt.corretto.aws/corretto.key | sudo apt-key add -
 RUN add-apt-repository 'deb https://apt.corretto.aws stable main'
 RUN  apt-get update; sudo apt-get install -y java-20-amazon-corretto-jdk
 
