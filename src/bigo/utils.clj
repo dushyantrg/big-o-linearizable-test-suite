@@ -1,10 +1,10 @@
 (ns bigo.utils
   (:require [clojure.string :as str]))
 
-(def dir  "/opt/lowlatdb")
-(def binary "/usr/bin/lowlatdb")
-(def logfile (str dir "/lowlatdb.log"))
-(def pidfile (str dir "/lowlatdb.pid"))
+(def dir  "/opt/bigo-raft")
+(def binary "java /usr/bin/bigo-raft.jar")
+(def logfile (str dir "/bigo-raft.log"))
+(def pidfile (str dir "/bigo-raft.pid"))
 
 (defn node-url
   "An HTTP url for connecting to a node on a particular port."
