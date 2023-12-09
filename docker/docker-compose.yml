@@ -59,14 +59,29 @@ services:
     << : *default-node
     container_name: jecci-n1
     hostname: n1
+    environment:
+      NODE_ID: 'n1'
+      RAFT_CLUSTER_NODE1_IP: 'n1'
+      RAFT_CLUSTER_NODE2_IP: 'n2'
+      RAFT_CLUSTER_NODE3_IP: 'n3'
   n2:
     << : *default-node
     container_name: jecci-n2
     hostname: n2
+    environment:
+      NODE_ID: 'n2'
+      RAFT_CLUSTER_NODE1_IP: 'n1'
+      RAFT_CLUSTER_NODE2_IP: 'n2'
+      RAFT_CLUSTER_NODE3_IP: 'n3'
   n3:
     << : *default-node
     container_name: jecci-n3
     hostname: n3
+    environment:
+      NODE_ID: 'n3'
+      RAFT_CLUSTER_NODE1_IP: 'n1'
+      RAFT_CLUSTER_NODE2_IP: 'n2'
+      RAFT_CLUSTER_NODE3_IP: 'n3'
 
 networks:
   jecci:

@@ -45,6 +45,16 @@ RUN groupadd jecci &&\
     echo "jecci ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers &&\
     mkdir -p /home/jecci/.ssh
 
-COPY lowlatdb /usr/bin/lowlatdb
+#install jre 20
+RUN sudo apt install software-properties-common -y
+RUN sudo apt update
+RUN wget -O- https://apt.corretto.aws/corretto.key | sudo apt-key add -
+RUN add-apt-repository 'deb https://apt.corretto.aws stable main'
+RUN apt-get update; sudo apt-get install -y java-20-amazon-corretto-jdk
+
+COPY bigo-0.1-all-optimized.jar /usr/bin/bigo-raft.jar
+
+COPY bootscript.sh /usr/bin/bootscript.sh
+RUN chmod +x /usr/bin/bootscript.sh
 
 CMD ["/usr/local/bin/boot-debian-base"]
