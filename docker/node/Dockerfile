@@ -57,4 +57,8 @@ RUN chmod +x /tmp/bootscript.sh
 
 COPY bigo-0.1-all-optimized.jar /usr/bin/bigo-raft.jar
 
+COPY startscript.sh /usr/bin/startscript.sh
+RUN chmod +x /usr/bin/startscript.sh
+
+
 CMD ["/tmp/bootscript.sh"]

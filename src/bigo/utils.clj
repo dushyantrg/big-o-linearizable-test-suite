@@ -2,7 +2,7 @@
   (:require [clojure.string :as str]))
 
 (def dir  "/opt/logs")
-(def binary "/usr/bin/bootscript.sh")
+(def binary "/usr/bin/startscript.sh")
 (def logfile (str dir "/lowlatdb.log"))
 (def pidfile (str dir "/lowlatdb.pid"))
 
