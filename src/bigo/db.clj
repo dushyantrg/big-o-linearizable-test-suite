@@ -17,9 +17,11 @@
         (cu/start-daemon!
           {:logfile utils/logfile
            :pidfile utils/pidfile
-           :chdir   utils/dir}
+           :chdir   utils/dir
+           :env {"NODE_ID" (utils/node-id node)}}
           utils/binary
           ;Add command line arguments here
+          ;; :--NODE_ID                 (utils/node-id node)
           ;:--listen-peer-urls             (peer-url   node)
           ;:--listen-client-urls           (client-url node)
           ;:--advertise-client-urls        (client-url node)
