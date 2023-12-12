@@ -29,3 +29,8 @@
        (map (fn [node]
               (str node "=" (peer-url node))))
        (str/join ",")))
+
+(defn node-id
+  "Returns the passed node identifier as a string"
+  [node]
+  (str node))
