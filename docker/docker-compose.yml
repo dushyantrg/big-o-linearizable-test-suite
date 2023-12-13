@@ -12,6 +12,8 @@ x-node:
     - /run/lock:size=500M
   volumes:
     - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
+    - "/var/tmp/bigo:/var/tmp/bigo:rw"
+    - "/tmp/raft:/tmp/raft:rw"
   networks:
     - jecci
   ports:
